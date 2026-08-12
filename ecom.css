@@ -1,0 +1,533 @@
+```css
+/* ==========================================
+   BASIC RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f5f5f5;
+
+    color: #333;
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+    background: #222;
+
+    color: white;
+
+    padding: 20px 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 26px;
+}
+
+
+/* ==========================================
+   CART BUTTON
+========================================== */
+
+.cart-button {
+    background: #ff9800;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+.cart-button:hover {
+    background: #e68900;
+}
+
+
+/* ==========================================
+   CART COUNT
+========================================== */
+
+#cartCount {
+    background: red;
+
+    color: white;
+
+    border-radius: 50%;
+
+    padding: 3px 8px;
+
+    margin-left: 5px;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main {
+    padding: 40px;
+}
+
+
+main h2 {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   PRODUCTS GRID
+========================================== */
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* ==========================================
+   PRODUCT CARD
+========================================== */
+
+.product-card {
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================
+   PRODUCT IMAGE
+========================================== */
+
+.product-card img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   PRODUCT NAME
+========================================== */
+
+.product-card h3 {
+    margin-top: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.price {
+    color: #e91e63;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   ADD TO CART BUTTON
+========================================== */
+
+.add-button {
+    background: #2196f3;
+
+    color: white;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+.add-button:hover {
+    background: #1976d2;
+
+    transform: scale(1.03);
+}
+
+
+.add-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ==========================================
+   CART MODAL
+========================================== */
+
+.cart-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+}
+
+
+/* ==========================================
+   CART CONTENT
+========================================== */
+
+.cart-content {
+    background: white;
+
+    width: 90%;
+
+    max-width: 650px;
+
+    margin: 5% auto;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+    position: relative;
+}
+
+
+.cart-content h2 {
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+========================================== */
+
+.close-button {
+    position: absolute;
+
+    right: 20px;
+
+    top: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+.close-button:hover {
+    color: red;
+}
+
+
+/* ==========================================
+   CART ITEM
+========================================== */
+
+.cart-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #ddd;
+
+    padding: 15px 0;
+}
+
+
+.cart-item img {
+    width: 70px;
+
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+
+.cart-item-info {
+    flex: 1;
+}
+
+
+.cart-item-info h4 {
+    margin-bottom: 5px;
+}
+
+
+.cart-item-info p {
+    color: #e91e63;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   QUANTITY
+========================================== */
+
+.quantity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.quantity button {
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    background: #ddd;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+.quantity button:hover {
+    background: #bbb;
+}
+
+
+.quantity span {
+    min-width: 20px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   REMOVE BUTTON
+========================================== */
+
+.remove-button {
+    background: #f44336;
+
+    color: white;
+
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.remove-button:hover {
+    background: #d32f2f;
+}
+
+
+/* ==========================================
+   EMPTY CART
+========================================== */
+
+.empty-cart {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #777;
+
+    font-size: 18px;
+}
+
+
+/* ==========================================
+   CART FOOTER
+========================================== */
+
+.cart-footer {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 2px solid #ddd;
+
+    text-align: right;
+}
+
+
+.cart-footer h3 {
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   CHECKOUT BUTTON
+========================================== */
+
+.checkout-button {
+    background: #4caf50;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+
+.checkout-button:hover {
+    background: #388e3c;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+
+    header h1 {
+        font-size: 22px;
+    }
+
+
+    main {
+        padding: 20px;
+    }
+
+
+    .cart-content {
+        margin: 10% auto;
+
+        padding: 20px;
+    }
+
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+
+    .cart-item-info {
+        min-width: 120px;
+    }
+
+}

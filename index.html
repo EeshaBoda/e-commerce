@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My E-Commerce Store</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="ecom.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>🛒 My E-Commerce Store</h1>
+
+        <button
+            class="cart-button"
+            onclick="openCart()">
+
+            Cart 🛍️
+
+            <span id="cartCount">0</span>
+
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <main>
+
+        <h2>Our Products</h2>
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://one8.com/cdn/shop/files/V10015001_03_6d97ac06-93e4-46c0-b7ee-12a9ae14bd22.jpg?v=1781597662"
+                    alt="Running Shoes">
+
+                <h3>Running Shoes</h3>
+
+                <p class="price">
+                    ₹1,499
+                </p>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart(1)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw56274f50/images/Fastrack/Catalog/3300NM01_1.jpg?sw=600&sh=600"
+                    alt="Smart Watch">
+
+                <h3>Smart Watch</h3>
+
+                <p class="price">
+                    ₹2,499
+                </p>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart(2)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://m.media-amazon.com/images/I/512sO2L0k6L.jpg"
+                    alt="Headphones">
+
+                <h3>Headphones</h3>
+
+                <p class="price">
+                    ₹999
+                </p>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart(3)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <img
+                    src="https://americantourister.in/cdn/shop/files/0A5A9129.jpg?crop=center&height=4100&v=1751551434&width=4100"
+                    alt="Travel Bag">
+
+                <h3>Travel Bag</h3>
+
+                <p class="price">
+                    ₹1,299
+                </p>
+
+                <button
+                    class="add-button"
+                    onclick="addToCart(4)">
+
+                    Add to Cart
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         CART MODAL
+    ========================== -->
+
+    <div
+        id="cartModal"
+        class="cart-modal">
+
+
+        <div class="cart-content">
+
+
+            <!-- CLOSE BUTTON -->
+
+            <button
+                class="close-button"
+                onclick="closeCart()">
+
+                ×
+
+            </button>
+
+
+            <h2>🛒 Your Cart</h2>
+
+
+            <!-- CART ITEMS -->
+
+            <div id="cartItems">
+
+                <!-- JavaScript adds products here -->
+
+            </div>
+
+
+            <!-- CART FOOTER -->
+
+            <div class="cart-footer">
+
+                <h3>
+                    Total:
+                    <span id="cartTotal">
+                        ₹0
+                    </span>
+                </h3>
+
+
+                <button
+                    class="checkout-button"
+                    onclick="checkout()">
+
+                    Checkout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="ecom.js"></script>
+
+</body>
+
+</html>
+
